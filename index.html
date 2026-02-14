@@ -120,7 +120,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
 .cbf::after{content:‘P’;font-size:20px;font-weight:900;opacity:.08;color:var(–a);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:‘Outfit’}
 
 /* ─── Mines grid ─── */
-.mt{aspect-ratio:1;background:var(–bg3);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:22px;transition:.15s;border:2px solid var(–bd);overflow:hidden}
+.mt{aspect-ratio:1;min-height:40px;background:var(–bg3);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:22px;transition:.15s;border:2px solid var(–bd);overflow:hidden}
 .mt:hover:not(.o){background:var(–bg4);transform:scale(1.04);border-color:rgba(0,231,1,.25);box-shadow:0 0 12px rgba(168,85,247,.08)}
 .mt.o{cursor:default}.mt.o.g{background:var(–ad);border-color:rgba(0,231,1,.3);animation:tr .3s}.mt.o.b{background:var(–rd);border-color:var(–red);animation:ts .4s}.mt.o.d{background:var(–bg);opacity:.35}
 @keyframes tr{0%{transform:scale(.7) rotate(-5deg);opacity:.6}60%{transform:scale(1.08) rotate(1deg)}100%{transform:scale(1) rotate(0);opacity:1}}
@@ -176,7 +176,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
 @keyframes histIn{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
 
 .mo{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:200;backdrop-filter:blur(6px)}
-.md{background:var(–sf2);border:1px solid var(–bd);border-radius:12px;padding:0;max-width:340px;width:90%;text-align:center;overflow:hidden}
+.md{background:var(–sf2);border:1px solid var(–bd);border-radius:12px;padding:0;max-width:500px;width:90%;text-align:center;overflow:hidden}
 .md-hd{background:linear-gradient(135deg,rgba(168,85,247,.08),rgba(240,185,11,.05));padding:20px 20px 14px;border-bottom:1px solid var(–bd2)}
 .md-hd h3{font-size:18px;font-weight:800;margin-bottom:2px}
 .md-hd p{font-size:12px;color:var(–t3)}
@@ -373,7 +373,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
 <a href="#terms">Terms of Service</a><a href="#privacy">Privacy Policy</a><a href="#responsible-gaming">Responsible Gaming</a><a href="#faq">FAQ</a>
 </div>
 <div id="loginScreen" style="position:fixed;inset:0;z-index:10000;background:#1e1b2e;display:flex;flex-direction:column;align-items:center;justify-content:center">
-<div style="text-align:center;max-width:340px;width:90%">
+<div style="text-align:center;max-width:500px;width:90%">
 <div style="width:60px;height:60px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 0 40px rgba(139,92,246,.3)"><svg viewBox="0 0 24 24" width="36" height="36"><path d="M12 2C8 2 5 5.5 5 10v7c0 .5.2 1 .6 1.3.5.3 1.2.1 1.4-.4l1-2.4 1.5 3c.2.5.8.7 1.3.4.5-.3.7-.9.4-1.4L10 15l1.5 3.5c.2.4.7.6 1.1.4.4-.2.6-.7.4-1.1L12 15l1 2.8c.2.4.6.7 1.1.5.4-.2.7-.6.5-1.1L13 14l1.5 3c.2.5.8.7 1.3.4.5-.3.7-.9.4-1.4l-1.2-2.5 1 2.4c.2.5.9.8 1.4.4.4-.3.6-.8.6-1.3V10c0-4.5-3-8-7-8z" fill="#1e1b2e"/><circle cx="9.5" cy="9" r="1.5" fill="#8b5cf6"/><circle cx="14.5" cy="9" r="1.5" fill="#8b5cf6"/></svg></div>
 <h1 style="font-size:24px;font-weight:900;color:#f0ecff;margin-bottom:4px;font-family:Outfit,sans-serif">PHANTOM<span style="color:#8b5cf6">CASINO</span></h1>
 <p style="color:#7e75a0;font-size:12px;margin-bottom:24px">Sign in to play</p>
@@ -412,7 +412,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
 <div class="ml"><div class="sb" id="sb"></div><div class="cnt" id="cnt"></div></div>
 <div class="mo" id="dm" style="display:none" onclick="if(event.target===this)this.style.display='none'">
   <div class="md">
-    <div class="md-hd"><h3>Deposit '+CONFIG.name+' '+CONFIG.currency+'</h3><p>Enter any amount — it's free virtual currency</p></div>
+    <div class="md-hd"><h3>Deposit Phantom Coins</h3><p>Enter any amount — it's free virtual currency</p></div>
     <div class="md-body">
       <div style="position:relative;margin-bottom:10px">
         <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--t3);font-family:'JetBrains Mono',monospace;font-weight:700">$</span>
@@ -799,7 +799,7 @@ function bjS(){const g=gs;g.done=true;while(hV(g.dl)<17)g.dl.push(g.dk.pop());sC
 function bjF(r,m){const g=gs;bjR(true);if(r==='w'){const w=(hV(g.pl)===21&&g.pl.length===2)?g.bet*2.4:g.bet*2;sB(bal+w,true,w);sWin();sT(m+' +'+w.toFixed(2)+' '+CONFIG.currency,'w');aH('+'+w.toFixed(2),true)}else if(r==='p'){sB(bal+g.bet,false,0,false);sCoin();sT(m,'w');aH('Push',true)}else{sB(bal,true,-g.bet);sLose();sT(m+' -'+g.bet.toFixed(2),'l');aH('-'+g.bet.toFixed(2),false)}}
 
 /* ─── Mines ─── */
-function rMN(){return{c:`${bC()}<div class="cs"><div class="cl">Mines</div><select class="csel" id="mc"><option value="1">1</option><option value="3" selected>3</option><option value="5">5</option><option value="7">7</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="24">24</option></select><div class="cpr" style="margin-top:3px"><button class="cp" onclick="document.getElementById('mc').value=1">1</button><button class="cp" onclick="document.getElementById('mc').value=3">3</button><button class="cp" onclick="document.getElementById('mc').value=5">5</button><button class="cp" onclick="document.getElementById('mc').value=10">10</button></div></div><button class="pb bg2" id="mp" onclick="mnS()">Bet</button><button class="cob" id="mcb" style="display:none" onclick="mnC()">Cash Out</button><div class="cinf" id="mi" style="display:none"><div class="cinf-i"><div class="v" id="mm">1.00x</div><div class="lb">Multi</div></div><div class="cinf-i"><div class="v" id="mpr">0.00</div><div class="lb">Profit</div></div><div class="cinf-i"><div class="v" id="ms">0</div><div class="lb">Gems</div></div></div>`,b:`<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:6px;width:100%;max-width:340px" id="mB">${Array(25).fill(0).map((_,i)=>`<div class="mt" id="mt${i}" onclick="mnK(${i})"></div>`).join('')}</div>`}}
+function rMN(){return{c:`${bC()}<div class="cs"><div class="cl">Mines</div><select class="csel" id="mc"><option value="1">1</option><option value="3" selected>3</option><option value="5">5</option><option value="7">7</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="24">24</option></select><div class="cpr" style="margin-top:3px"><button class="cp" onclick="document.getElementById('mc').value=1">1</button><button class="cp" onclick="document.getElementById('mc').value=3">3</button><button class="cp" onclick="document.getElementById('mc').value=5">5</button><button class="cp" onclick="document.getElementById('mc').value=10">10</button></div></div><button class="pb bg2" id="mp" onclick="mnS()">Bet</button><button class="cob" id="mcb" style="display:none" onclick="mnC()">Cash Out</button><div class="cinf" id="mi" style="display:none"><div class="cinf-i"><div class="v" id="mm">1.00x</div><div class="lb">Multi</div></div><div class="cinf-i"><div class="v" id="mpr">0.00</div><div class="lb">Profit</div></div><div class="cinf-i"><div class="v" id="ms">0</div><div class="lb">Gems</div></div></div>`,b:`<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:6px;width:100%;max-width:500px" id="mB">${Array(25).fill(0).map((_,i)=>`<div class="mt" id="mt${i}" onclick="mnK(${i})"></div>`).join('')}</div>`}}
 function mnS(){const bet=gB();if(!bet)return;const mc=parseInt(document.getElementById('mc').value);sB(bal-bet);const g=gs;g.bet=bet;g.mc=mc;g.rv=0;g.done=false;g.gr=Array(25).fill(0);const p=shuf([...Array(25).keys()]);for(let i=0;i<mc;i++)g.gr[p[i]]=1;document.getElementById('mp').style.display='none';document.getElementById('mcb').style.display='';document.getElementById('mi').style.display='';for(let i=0;i<25;i++){const t=document.getElementById('mt'+i);t.className='mt';t.innerHTML=''}mnU();sClick()}
 function mnM(){const g=gs;const s=25-g.mc;let m=1;for(let i=0;i<g.rv;i++)m*=(25-i)/(s-i);return m*.97}
 function mnU(){const m=mnM();const g=gs;document.getElementById('mm').textContent=m.toFixed(2)+'x';document.getElementById('mpr').textContent=(g.bet*m-g.bet).toFixed(2);document.getElementById('ms').textContent=g.rv;document.getElementById('mcb').innerHTML=`Cash Out <span style="font-family:'JetBrains Mono';font-size:12px">${(g.bet*m).toFixed(2)}</span>`}
@@ -1150,16 +1150,16 @@ function rWH(){
     <div id="whR" style="font-family:'JetBrains Mono';font-size:28px;font-weight:700;min-height:36px">Spin to play</div>
   </div>`}}
 const _wS=[
-  {v:0,l:'0x',c:'#5a6f82',bg:'#171225'},{v:1.2,l:'1.2x',c:'#a855f7',bg:'#1a1530'},
-  {v:0,l:'0x',c:'#5a6f82',bg:'#1e1830'},{v:1.5,l:'1.5x',c:'#a855f7',bg:'#1a1530'},
-  {v:0,l:'0x',c:'#5a6f82',bg:'#171225'},{v:2,l:'2x',c:'#f0b90b',bg:'#1f1a2e'},
-  {v:1.2,l:'1.2x',c:'#a855f7',bg:'#1a1530'},{v:0,l:'0x',c:'#5a6f82',bg:'#1e1830'},
-  {v:0,l:'0x',c:'#5a6f82',bg:'#171225'},{v:5,l:'5x',c:'#ed4245',bg:'#1f1225'},
-  {v:0,l:'0x',c:'#5a6f82',bg:'#1e1830'},{v:1.2,l:'1.2x',c:'#a855f7',bg:'#1a1530'},
-  {v:0,l:'0x',c:'#5a6f82',bg:'#171225'},{v:1.5,l:'1.5x',c:'#a855f7',bg:'#1a1530'},
-  {v:0,l:'0x',c:'#5a6f82',bg:'#1e1830'},{v:2,l:'2x',c:'#f0b90b',bg:'#1f1a2e'},
-  {v:1.2,l:'1.2x',c:'#a855f7',bg:'#1a1530'},{v:0,l:'0x',c:'#5a6f82',bg:'#171225'},
-  {v:0,l:'0x',c:'#5a6f82',bg:'#1e1830'},{v:1.5,l:'1.5x',c:'#a855f7',bg:'#1a1530'}
+  {v:0,l:'0x',c:'#ccc',bg:'#2a2345'},{v:1.2,l:'1.2x',c:'#fff',bg:'#6d28d9'},
+  {v:0,l:'0x',c:'#ccc',bg:'#352d52'},{v:1.5,l:'1.5x',c:'#fff',bg:'#7c3aed'},
+  {v:0,l:'0x',c:'#ccc',bg:'#2a2345'},{v:2,l:'2x',c:'#fff',bg:'#d97706'},
+  {v:1.2,l:'1.2x',c:'#fff',bg:'#6d28d9'},{v:0,l:'0x',c:'#ccc',bg:'#352d52'},
+  {v:0,l:'0x',c:'#ccc',bg:'#2a2345'},{v:5,l:'5x',c:'#fff',bg:'#dc2626'},
+  {v:0,l:'0x',c:'#ccc',bg:'#352d52'},{v:1.2,l:'1.2x',c:'#fff',bg:'#6d28d9'},
+  {v:0,l:'0x',c:'#ccc',bg:'#2a2345'},{v:1.5,l:'1.5x',c:'#fff',bg:'#7c3aed'},
+  {v:0,l:'0x',c:'#ccc',bg:'#352d52'},{v:2,l:'2x',c:'#fff',bg:'#d97706'},
+  {v:1.2,l:'1.2x',c:'#fff',bg:'#6d28d9'},{v:0,l:'0x',c:'#ccc',bg:'#2a2345'},
+  {v:0,l:'0x',c:'#ccc',bg:'#352d52'},{v:1.5,l:'1.5x',c:'#fff',bg:'#7c3aed'}
 ];
 function _wD(a){
   const cv=document.getElementById('whCv');if(!cv)return;const ctx=cv.getContext('2d');
